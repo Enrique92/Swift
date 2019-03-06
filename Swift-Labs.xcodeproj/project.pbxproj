@@ -8,10 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		DA29A226222F311400F60FBE /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA29A225222F311400F60FBE /* main.swift */; };
+		DA9B7D362230757D00D8E8F3 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9B7D352230757D00D8E8F3 /* main.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		DA29A220222F311400F60FBE /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		DA9B7D312230757D00D8E8F3 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -29,10 +39,21 @@
 		DA29A22D222F4A8F00F60FBE /* TypesOperators.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = TypesOperators.playground; path = ../../../Downloads/SwiftBasics/TypesOperators.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		DA29A22E222F4A8F00F60FBE /* Strings.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = Strings.playground; path = ../../../Downloads/SwiftBasics/Strings.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		DA29A22F222F4A8F00F60FBE /* Exercises.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = Exercises.playground; path = ../../../Downloads/SwiftBasics/Exercises.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		DA9B7D332230757D00D8E8F3 /* Control */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Control; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA9B7D352230757D00D8E8F3 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		DA9B7D3A2230758E00D8E8F3 /* Exercises.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = Exercises.playground; path = ../../../Downloads/ControlFlow/Exercises.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		DA9B7D3B2230758E00D8E8F3 /* ControlFlow.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = ControlFlow.playground; path = ../../../Downloads/ControlFlow/ControlFlow.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		DA29A21F222F311400F60FBE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA9B7D302230757D00D8E8F3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -46,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				DA29A224222F311400F60FBE /* Swift-Labs */,
+				DA9B7D342230757D00D8E8F3 /* Control */,
 				DA29A223222F311400F60FBE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				DA29A222222F311400F60FBE /* Swift-Labs */,
+				DA9B7D332230757D00D8E8F3 /* Control */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -68,6 +91,16 @@
 				DA29A225222F311400F60FBE /* main.swift */,
 			);
 			path = "Swift-Labs";
+			sourceTree = "<group>";
+		};
+		DA9B7D342230757D00D8E8F3 /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				DA9B7D3B2230758E00D8E8F3 /* ControlFlow.playground */,
+				DA9B7D3A2230758E00D8E8F3 /* Exercises.playground */,
+				DA9B7D352230757D00D8E8F3 /* main.swift */,
+			);
+			path = Control;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -90,6 +123,23 @@
 			productReference = DA29A222222F311400F60FBE /* Swift-Labs */;
 			productType = "com.apple.product-type.tool";
 		};
+		DA9B7D322230757D00D8E8F3 /* Control */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA9B7D392230757D00D8E8F3 /* Build configuration list for PBXNativeTarget "Control" */;
+			buildPhases = (
+				DA9B7D2F2230757D00D8E8F3 /* Sources */,
+				DA9B7D302230757D00D8E8F3 /* Frameworks */,
+				DA9B7D312230757D00D8E8F3 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Control;
+			productName = Control;
+			productReference = DA9B7D332230757D00D8E8F3 /* Control */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -101,6 +151,9 @@
 				ORGANIZATIONNAME = Enrique;
 				TargetAttributes = {
 					DA29A221222F311400F60FBE = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					DA9B7D322230757D00D8E8F3 = {
 						CreatedOnToolsVersion = 10.1;
 					};
 				};
@@ -118,6 +171,7 @@
 			projectRoot = "";
 			targets = (
 				DA29A221222F311400F60FBE /* Swift-Labs */,
+				DA9B7D322230757D00D8E8F3 /* Control */,
 			);
 		};
 /* End PBXProject section */
@@ -128,6 +182,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA29A226222F311400F60FBE /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA9B7D2F2230757D00D8E8F3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA9B7D362230757D00D8E8F3 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +331,26 @@
 			};
 			name = Release;
 		};
+		DA9B7D372230757D00D8E8F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L7L53ZA324;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		DA9B7D382230757D00D8E8F3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L7L53ZA324;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -286,6 +368,15 @@
 			buildConfigurations = (
 				DA29A22A222F311400F60FBE /* Debug */,
 				DA29A22B222F311400F60FBE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DA9B7D392230757D00D8E8F3 /* Build configuration list for PBXNativeTarget "Control" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA9B7D372230757D00D8E8F3 /* Debug */,
+				DA9B7D382230757D00D8E8F3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
