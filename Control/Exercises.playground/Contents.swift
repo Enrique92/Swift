@@ -13,16 +13,17 @@ for values in movieTitleArray {
 
 //: ### Exercise 2
 //: Rent is increasing by 20% this year. Use a for-in loop to apply this increase to each item in the oldMountainViewRent array.  Store the new values in the array newMountainViewRent.
-var oldMountainViewRent:[Double] = [2150, 1775, 2221, 1261, 1325, 2110, 1870]
+var oldMountainViewRent: [Double] = [2150, 1775, 2221, 1261, 1325, 2110, 1870]
 var newMountainViewRent = [Double]()
 
 for i in oldMountainViewRent {
-    newMountainViewRent = i * (0.20)
+    newMountainViewRent = i * 0.20
     print("New value \(i)")
 }
+
 //: ### Exercise 3
 //: For each food with a true value, print out "<food>, yum!" For each food with a false value print out, "<food>, yuck!"
-var polarizingFoods = ["Anchovies":true, "Coconut":true, "Cilantro":true, "Liver": false]
+var polarizingFoods = ["Anchovies": true, "Coconut": true, "Cilantro": true, "Liver": false]
 
 for i in polarizingFoods {
     if i.value == true {
@@ -34,7 +35,7 @@ for i in polarizingFoods {
 
 //: ### Exercise 4
 //: The Oakland area code is changing from 415 to 510. Replace all occurrences of the area code 415 with 510 in the dictionary below.
-var rapperPhoneNumbers = ["Azealia Banks":"(212)548-8777", "Boots Riley":"(415)755-9887", "MC Hammer":"(415)533-9899", "Missy Elliot":"(757)488-5552", "Shock G":"(415)499-7676", "Sir Mix-a-lot":"(206)123-4567", "Snoop Dogg":"(213)760-6664"]
+var rapperPhoneNumbers = ["Azealia Banks": "(212)548-8777", "Boots Riley": "(415)755-9887", "MC Hammer": "(415)533-9899", "Missy Elliot": "(757)488-5552", "Shock G": "(415)499-7676", "Sir Mix-a-lot": "(206)123-4567", "Snoop Dogg": "(213)760-6664"]
 
 for (key, value) in rapperPhoneNumbers.enumerated() {
     if rapperPhoneNumbers.values.contains("415") {
@@ -52,29 +53,29 @@ enum Sport {
 
 var sport = Sport.baseball
 
-//if sport == .baseball {
+// if sport == .baseball {
 //    print("Go A's!")
-//} else if sport == .basketball {
+// } else if sport == .basketball {
 //    print("Go Warriors!")
-//} else if sport == .football {
+// } else if sport == .football {
 //    print( "Go Raiders!")
-//} else if sport == .hockey {
+// } else if sport == .hockey {
 //    print("Go Sharks!")
-//} else if sport == .soccer {
+// } else if sport == .soccer {
 //    print("Go Earthquakes!")
-//}
+// }
 
 switch sport {
-    case .baseball:
-        print("Go A's!")
-    case .basketball:
-        print("Go Warriors!")
-    case .football:
-        print( "Go Raiders!")
-    case .hockey:
-        print("Go Sharks!")
-    case .soccer:
-        print("Go Earthquakes!")
+case .baseball:
+    print("Go A's!")
+case .basketball:
+    print("Go Warriors!")
+case .football:
+    print("Go Raiders!")
+case .hockey:
+    print("Go Sharks!")
+case .soccer:
+    print("Go Earthquakes!")
 }
 
 //: ### Exercise 6
@@ -88,25 +89,25 @@ var yourMove = roshamboMove.scissors
 
 var resultsMessage = ""
 
-//if myMove == .rock && yourMove == .paper || myMove == .paper && yourMove == .rock {
+// if myMove == .rock && yourMove == .paper || myMove == .paper && yourMove == .rock {
 //    resultsMessage = "Paper covers Rock."
-//} else if myMove == yourMove {
+// } else if myMove == yourMove {
 //    resultsMessage = "It's a tie!"
-//} else if myMove == .rock && yourMove == .scissors || myMove == .scissors && yourMove == .rock {
+// } else if myMove == .rock && yourMove == .scissors || myMove == .scissors && yourMove == .rock {
 //    resultsMessage = "Rock crushes Scissors. "
-//} else if myMove == .paper && yourMove == .scissors || myMove == .scissors && yourMove == .paper {
+// } else if myMove == .paper && yourMove == .scissors || myMove == .scissors && yourMove == .paper {
 //    resultsMessage = "Scissors cut Paper."
-//}
+// }
 
 switch myMove {
-    case .rock, .paper where (yourMove == .paper && yourMove == .rock):
-        resultsMessage = "Paper covers Rock."
-    case yourMove:
-        resultsMessage = "It's a tie!"
-    case .rock, .scissors where (yourMove == .scissors && yourMove == .rock):
-        resultsMessage = "Rock crushes Scissors. "
-    case .paper, .scissors where (yourMove == .paper && yourMove == .paper):
-        resultsMessage = "Scissors cut Paper."
+case .rock, .paper where yourMove == .paper && yourMove == .rock:
+    resultsMessage = "Paper covers Rock."
+case yourMove:
+    resultsMessage = "It's a tie!"
+case .rock, .scissors where yourMove == .scissors && yourMove == .rock:
+    resultsMessage = "Rock crushes Scissors. "
+case .paper, .scissors where yourMove == .paper && yourMove == .paper:
+    resultsMessage = "Scissors cut Paper."
 }
 
 //: ### Exercise 7
@@ -114,26 +115,26 @@ switch myMove {
 var score = 97
 var letterGrade = ""
 
-//if 90...100 ~= score {
+// if 90...100 ~= score {
 //    letterGrade = "A"
-//} else if 80...89 ~= score {
+// } else if 80...89 ~= score {
 //    letterGrade = "B"
-//} else if 70...79 ~= score {
+// } else if 70...79 ~= score {
 //    letterGrade = "C"
-//} else if 60...69 ~= score {
+// } else if 60...69 ~= score {
 //    letterGrade = "D"
-//} else {
+// } else {
 //    letterGrade = "Incomplete"
-//}
+// }
 
 switch score {
-case 90...100:
+case 90 ... 100:
     letterGrade = "A"
-case 80...89:
+case 80 ... 89:
     letterGrade = "B"
-case 70...79:
+case 70 ... 79:
     letterGrade = "C"
-case 60...69:
+case 60 ... 69:
     letterGrade = "D"
 default:
     letterGrade = "Incomplete"
@@ -147,12 +148,12 @@ var firstLetter = word[word.startIndex]
 var newWord = ""
 var vowels: [Character] = ["a", "e", "i", "o", "u"]
 
-//if vowels.contains(firstLetter) {
+// if vowels.contains(firstLetter) {
 //    newWord = word + "yay"
-//} else {
+// } else {
 //    word.remove(at: word.startIndex)
 //    newWord = "\(word)\(firstLetter)ay"
-//}
+// }
 
 switch word {
 case "a":
