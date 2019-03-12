@@ -37,7 +37,7 @@ func isPalindrom(_ word: String) -> Bool {
 
 // print without the \n
 // print("Hello", terminator: "")
-isPalindrom("racecar")
+//isPalindrom("racecar")
 
 func printBinary(_ num: Int) {
     if num < 2 {
@@ -48,7 +48,7 @@ func printBinary(_ num: Int) {
     print(num % 2, terminator: "")
 }
 
-printBinary(22)
+//printBinary(22)
 print("")
 
 // Open a file and read values
@@ -58,17 +58,17 @@ func reverseLines() {
     print(lines.joined(separator: ", "))
 }
 
-reverseLines()
+//reverseLines()
 
 // Exhaustive search
-func printBinaryNew(_ digits: Int, _ prefix: String = "") {
-    if digits == 0 {
-        print(prefix)
-    } else {
-        printBinary(digits - 1, prefix + "0")
-        printBinary(digits - 1, prefix + "1")
-    }
-}
+//func printBinaryNew(_ digits: Int, _ prefix: String = "") {
+//    if digits == 0 {
+//        print(prefix)
+//    } else {
+//        printBinary(digits - 1, prefix + "0")
+//        printBinary(digits - 1, prefix + "1")
+//    }
+//}
 
 func printDecimals(_ digits: Int, _ prefix: String = "") {
     if digits == 0 {
@@ -80,7 +80,11 @@ func printDecimals(_ digits: Int, _ prefix: String = "") {
     }
 }
 
-printDecimals(3)
+//printDecimals(3)
 
 // Prove the excercise
-print(evaluate(expre: "((5 + 2) * ((7 + 2) * 2))"))
+//print(evaluate(expre: "((5 + 2) * ((7 + 2) * 2))"))
+
+
+let arrayToSort = [10, 22, 50, 9, 33, 41, 21, 40, 80, 60, 26]
+bubbleSort(arrayToSort)

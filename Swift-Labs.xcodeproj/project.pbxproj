@@ -12,6 +12,8 @@
 		DA9926D12231E5A60014BFDB /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9926D02231E5A60014BFDB /* main.swift */; };
 		DA9926DE22331C230014BFDB /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9926DD22331C230014BFDB /* main.swift */; };
 		DA9926EA223811EB0014BFDB /* evaluateString.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9926E9223811EB0014BFDB /* evaluateString.swift */; };
+		DA9926EC223858000014BFDB /* searchs.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9926EB223857FF0014BFDB /* searchs.swift */; };
+		DA9926EE223878520014BFDB /* QuickSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9926ED223878520014BFDB /* QuickSort.swift */; };
 		DA9B7D362230757D00D8E8F3 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9B7D352230757D00D8E8F3 /* main.swift */; };
 		DAACA8AF22308D7D009A8F42 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAACA8AE22308D7D009A8F42 /* main.swift */; };
 /* End PBXBuildFile section */
@@ -92,6 +94,8 @@
 		DA9926DD22331C230014BFDB /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		DA9926E822333DE00014BFDB /* File.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = File.txt; sourceTree = "<group>"; };
 		DA9926E9223811EB0014BFDB /* evaluateString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = evaluateString.swift; sourceTree = "<group>"; };
+		DA9926EB223857FF0014BFDB /* searchs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchs.swift; sourceTree = "<group>"; };
+		DA9926ED223878520014BFDB /* QuickSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickSort.swift; sourceTree = "<group>"; };
 		DA9B7D332230757D00D8E8F3 /* Control */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Control; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA9B7D352230757D00D8E8F3 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		DA9B7D3A2230758E00D8E8F3 /* Exercises.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = Exercises.playground; path = ../../../Downloads/ControlFlow/Exercises.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -212,6 +216,8 @@
 				DA9926DD22331C230014BFDB /* main.swift */,
 				DA9926E822333DE00014BFDB /* File.txt */,
 				DA9926E9223811EB0014BFDB /* evaluateString.swift */,
+				DA9926EB223857FF0014BFDB /* searchs.swift */,
+				DA9926ED223878520014BFDB /* QuickSort.swift */,
 			);
 			path = Recursion;
 			sourceTree = "<group>";
@@ -422,8 +428,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA9926EC223858000014BFDB /* searchs.swift in Sources */,
 				DA9926DE22331C230014BFDB /* main.swift in Sources */,
 				DA9926EA223811EB0014BFDB /* evaluateString.swift in Sources */,
+				DA9926EE223878520014BFDB /* QuickSort.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
