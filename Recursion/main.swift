@@ -87,4 +87,7 @@ func printDecimals(_ digits: Int, _ prefix: String = "") {
 
 
 let arrayToSort = [10, 22, 50, 9, 33, 41, 21, 40, 80, 60, 26]
-bubbleSort(arrayToSort)
+//bubbleSort(arrayToSort)
+
+let array = [ 101, 9, 3, 0, 12, 50, 33, 24]
+quickSort(array, 0, array.count)

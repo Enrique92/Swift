@@ -26,7 +26,6 @@ import Foundation
 // 5. Quick Sort O(n log n)
 // Space-Complexity O(1) (in-place)
 func quickSort(_ array: [Int], _ low: Int, _ high: Int) {
-    let array = [ 101, 9, 3, 0, 12, 50, 33, 24]
     if low < high {
         let pivot_i = partition(array, low, high)
         quickSort(array, low, pivot_i)
@@ -39,10 +38,13 @@ func partition(_ array: [Int], _ low: Int, _ high: Int) -> Int {
     var pivot_i = array[high]
     var i = low
     for j in low..<high {
-        if j <= pivot_i {
+        if array[j] <= pivot_i {
             i = pivot_i
-            pivot_i += 1
+            // Swip the data
+            //(array[i], array[j]) = (array[j], array[i])
+            i += 1
         }
+        //(array[i], array[high]) = (array[high], array[i])
         pivot_i = high
     }
     return pivot_i
