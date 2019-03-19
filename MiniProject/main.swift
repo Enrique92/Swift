@@ -8,4 +8,11 @@
 
 import Foundation
 
-Board(size: 8)
+// Create a instance of board with the size
+var board = Board(size: 8)
+
+// Resolve the quiz
+let resolver = solveQueens(board: &board)
+
+// Print the board
+//print(board.description)

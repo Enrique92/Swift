@@ -21,35 +21,38 @@ func solveQueens(board: inout Board) {
     var countNumberOfQueensSafe = 0
     var numberOfIterations = 0
     let sizeBoard: [[Int]] = [[8]]
+    var size = Array(repeating: Array(repeating: 0, count: board.size), count: board.size)
     
     // Check if the queen is safe
-    for i in sizeBoard {
-        // If there are less than 8 queens keep placing the queen in the board
-        if countNumberOfQueensSafe != numberOfQueens {
-            if board.isSafe(row: i.count, col: i.count) {
-                board.place(row: i.count, col: i.count)
-                countNumberOfQueensSafe += 1
-                
-                // Show the number of total iterations
-                numberOfIterations += 1
+    for i in size {
+        for j in i {
+            // If there are less than 8 queens keep placing the queen in the board
+            if countNumberOfQueensSafe != numberOfQueens {
+                if board.isSafe(row: i.count, col: j) {
+                    board.place(row: i.count, col: j)
+                    countNumberOfQueensSafe += 1
+
+                    // Show the number of total iterations
+                    numberOfIterations += 1
+                }
             }
+
+            // Check the number of solutions
+            solveQueens(board: &board)
+
+            if countNumberOfQueensSafe == numberOfQueens {
+                // Remove from the board
+                board.remove(row: i.count, col: i.count)
+            }
+
+            // Check the number of solutions
+            solveQueens(board: &board)
+
+            // Print the board
+            print(board.description)
         }
-        
-        // Check the number of solutions
-        solveQueens(board: &board)
-        
-        if countNumberOfQueensSafe == numberOfQueens {
-            // Remove from the board
-            board.remove(row: i.count, col: i.count)
-        }
-        
-        // Check the number of solutions
-        solveQueens(board: &board)
-        
         // Print the number of iterations
         print("Number of iterations \(numberOfIterations)")
     }
-    // Print the board
-    print(board.description)
 }
 
