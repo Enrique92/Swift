@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		21437687223C403D00375845 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21437686223C403D00375845 /* main.swift */; };
 		2143769222403C7500375845 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2143769122403C7500375845 /* main.swift */; };
+		214376982240867600375845 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214376962240867600375845 /* Board.swift */; };
+		214376992240867600375845 /* QueensSolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214376972240867600375845 /* QueensSolver.swift */; };
 		DA29A226222F311400F60FBE /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA29A225222F311400F60FBE /* main.swift */; };
 		DA2FA5202231C77C008268B0 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2FA51F2231C77C008268B0 /* main.swift */; };
 		DA9926D12231E5A60014BFDB /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9926D02231E5A60014BFDB /* main.swift */; };
@@ -21,8 +23,6 @@
 		DA9B7D362230757D00D8E8F3 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9B7D352230757D00D8E8F3 /* main.swift */; };
 		DAA796D8223AF15F0053518C /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA796D7223AF15F0053518C /* main.swift */; };
 		DAA796E3223B0FFE0053518C /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA796E2223B0FFE0053518C /* main.swift */; };
-		DAA796E9223B10130053518C /* QueensSolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA796E7223B10130053518C /* QueensSolver.swift */; };
-		DAA796EA223B10130053518C /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA796E8223B10130053518C /* Board.swift */; };
 		DAACA8AF22308D7D009A8F42 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAACA8AE22308D7D009A8F42 /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -142,6 +142,8 @@
 		21437686223C403D00375845 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		2143768F22403C7400375845 /* Adjacency-Matrix */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Adjacency-Matrix"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2143769122403C7500375845 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		214376962240867600375845 /* Board.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
+		214376972240867600375845 /* QueensSolver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueensSolver.swift; sourceTree = "<group>"; };
 		DA29A222222F311400F60FBE /* Swift-Labs */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Swift-Labs"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA29A225222F311400F60FBE /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		DA29A22C222F4A8E00F60FBE /* ConstantsVariables.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = ConstantsVariables.playground; path = ../../../Downloads/SwiftBasics/ConstantsVariables.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -176,8 +178,6 @@
 		DAA796D7223AF15F0053518C /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		DAA796E0223B0FFE0053518C /* MiniProject */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MiniProject; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAA796E2223B0FFE0053518C /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		DAA796E7223B10130053518C /* QueensSolver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QueensSolver.swift; path = ../../../Downloads/QueensSolver.swift; sourceTree = "<group>"; };
-		DAA796E8223B10130053518C /* Board.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Board.swift; path = ../../../Downloads/Board.swift; sourceTree = "<group>"; };
 		DAACA8AC22308D7D009A8F42 /* SwiftOptionals */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SwiftOptionals; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAACA8AE22308D7D009A8F42 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		DAEE33552230968D00F3DE59 /* Exercises.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Exercises.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -409,8 +409,8 @@
 		DAA796E1223B0FFE0053518C /* MiniProject */ = {
 			isa = PBXGroup;
 			children = (
-				DAA796E8223B10130053518C /* Board.swift */,
-				DAA796E7223B10130053518C /* QueensSolver.swift */,
+				214376962240867600375845 /* Board.swift */,
+				214376972240867600375845 /* QueensSolver.swift */,
 				DAA796E2223B0FFE0053518C /* main.swift */,
 			);
 			path = MiniProject;
@@ -798,8 +798,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAA796E3223B0FFE0053518C /* main.swift in Sources */,
-				DAA796E9223B10130053518C /* QueensSolver.swift in Sources */,
-				DAA796EA223B10130053518C /* Board.swift in Sources */,
+				214376992240867600375845 /* QueensSolver.swift in Sources */,
+				214376982240867600375845 /* Board.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
