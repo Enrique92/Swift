@@ -20,8 +20,8 @@ func solveQueens(board: inout Board) {
     let numberOfQueens = 8
     var countNumberOfQueensSafe = 0
     var numberOfIterations = 0
-    let sizeBoard: [[Int]] = [[8]]
-    var size = Array(repeating: Array(repeating: 0, count: board.size), count: board.size)
+    //let _: [[Int]] = [[8]]
+    let size = Array(repeating: Array(repeating: 0, count: board.size), count: board.size)
     
     // Check if the queen is safe
     for i in size {

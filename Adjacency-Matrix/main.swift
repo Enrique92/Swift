@@ -39,13 +39,25 @@ func storeGraph() {
 // 3 (2 - 4)
 // 4 (2 - 3 - 5 - 6)
 // 5 (2 - 3)
-func dfs(start: Int) {
-    let neighbour1 = start + 1
-    let neighbour2 = neighbour1 + 1
-    
-    var queue: Queue<Int> = Queue<Int>()
-    queue.enqueue(1)
-    
+func dfs(start: Int, check: inout [Bool], adjList: inout [[Int]]) {
+    check[start] = true
+    print(start)
+    for next in adjList[start] {
+        if check[next] == false {
+            dfs(start: next, check: &check, adjList: &adjList)
+        }
+    }
+}
+
+func dfsNew(start: Int, color: Int, check: inout [Int], adjList: inout [[Int]]) {
+    check[start] = color
+    for next in adjList[start] {
+        if check[next] == 0 {
+            dfsNew(start: next, color: 3 - color, check: &check, adjList: &adjList)
+        } else if () {
+            return false
+        }
+    }
 }
 
 struct Queue<T> {
@@ -77,4 +89,65 @@ struct Queue<T> {
     }
 }
 
-print(storeGraph())
+//print(storeGraph())
+
+func connectedComponents() {
+    let inputComponent = readLine()!.split(separator: " ")
+    let n = Int(inputComponent[0])!
+    let m = Int(inputComponent[1])!
+    var matrix = Array<Array<Int>>(repeating: [], count: n + 1)
+    
+    for _ in 0..<m {
+        let edge = readLine()!.split(separator: " ")
+        let u = Int(edge[0])!
+        let v = Int(edge[1])!
+        matrix[u][v] = 1
+        matrix[v][u] = 1
+    }
+    
+    var check: [Bool] = Array<Bool>(repeating: false, count: n + 1)
+    var count = 0
+    for node in 1..<matrix.count {
+        if !check[node] {
+            dfs(start: node, check: &check, adjList: &matrix)
+            count += 1
+        }
+    }
+    
+    print("Number of components: \(count)")
+}
+
+// Print number of components
+//connectedComponents()
+
+func bipartiteGraph() {
+    var inputNumberOfTestCases = Int(readLine()!)!
+    let inputGraphs = readLine()!.split(separator: " ")
+    let n = Int(inputGraphs[0])!
+    let m = Int(inputGraphs[1])!
+    var matrix = Array<Array<Int>>(repeating: [], count: n + 1)
+    
+    while inputNumberOfTestCases > 0 {
+        for _ in 0..<m {
+            let edge = readLine()!.split(separator: " ")
+            let u = Int(edge[0])!
+            let v = Int(edge[1])!
+            matrix[u][v] = 1
+            matrix[v][u] = 1
+        }
+        
+        var check: [Int] = Array<Int>(repeating: 0, count: n + 1)
+        var solution = "NO"
+        for node in 1...n {
+            if check[node] == 0 {
+                dfsNew(start: node, color: 1, check: &check, adjList: &matrix)
+                solution = "YES"
+            }
+        }
+    }
+    
+    print("Is bipartite graph: \(solution)")
+}
+
+// Print the result
+bipartiteGraph()

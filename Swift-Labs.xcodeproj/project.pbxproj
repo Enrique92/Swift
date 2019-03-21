@@ -11,6 +11,7 @@
 		2143769222403C7500375845 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2143769122403C7500375845 /* main.swift */; };
 		214376982240867600375845 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214376962240867600375845 /* Board.swift */; };
 		214376992240867600375845 /* QueensSolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214376972240867600375845 /* QueensSolver.swift */; };
+		214376A12241A78B00375845 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214376A02241A78B00375845 /* main.swift */; };
 		DA29A226222F311400F60FBE /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA29A225222F311400F60FBE /* main.swift */; };
 		DA2FA5202231C77C008268B0 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2FA51F2231C77C008268B0 /* main.swift */; };
 		DA9926D12231E5A60014BFDB /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9926D02231E5A60014BFDB /* main.swift */; };
@@ -37,6 +38,15 @@
 			runOnlyForDeploymentPostprocessing = 1;
 		};
 		2143768D22403C7400375845 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		2143769C2241A78B00375845 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -144,6 +154,8 @@
 		2143769122403C7500375845 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		214376962240867600375845 /* Board.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
 		214376972240867600375845 /* QueensSolver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueensSolver.swift; sourceTree = "<group>"; };
+		2143769E2241A78B00375845 /* Problem_Graph */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Problem_Graph; sourceTree = BUILT_PRODUCTS_DIR; };
+		214376A02241A78B00375845 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		DA29A222222F311400F60FBE /* Swift-Labs */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Swift-Labs"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA29A225222F311400F60FBE /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		DA29A22C222F4A8E00F60FBE /* ConstantsVariables.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = ConstantsVariables.playground; path = ../../../Downloads/SwiftBasics/ConstantsVariables.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -193,6 +205,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		2143768C22403C7400375845 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2143769B2241A78B00375845 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -288,6 +307,14 @@
 			path = "Adjacency-Matrix";
 			sourceTree = "<group>";
 		};
+		2143769F2241A78B00375845 /* Problem_Graph */ = {
+			isa = PBXGroup;
+			children = (
+				214376A02241A78B00375845 /* main.swift */,
+			);
+			path = Problem_Graph;
+			sourceTree = "<group>";
+		};
 		DA29A219222F311400F60FBE = {
 			isa = PBXGroup;
 			children = (
@@ -303,6 +330,7 @@
 				DAA796E1223B0FFE0053518C /* MiniProject */,
 				21437685223C403D00375845 /* Friday Exercise 1 */,
 				2143769022403C7500375845 /* Adjacency-Matrix */,
+				2143769F2241A78B00375845 /* Problem_Graph */,
 				DA29A223222F311400F60FBE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -322,6 +350,7 @@
 				DAA796E0223B0FFE0053518C /* MiniProject */,
 				21437684223C403D00375845 /* Friday Exercise 1 */,
 				2143768F22403C7400375845 /* Adjacency-Matrix */,
+				2143769E2241A78B00375845 /* Problem_Graph */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -461,6 +490,23 @@
 			name = "Adjacency-Matrix";
 			productName = "Adjacency-Matrix";
 			productReference = 2143768F22403C7400375845 /* Adjacency-Matrix */;
+			productType = "com.apple.product-type.tool";
+		};
+		2143769D2241A78B00375845 /* Problem_Graph */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 214376A22241A78B00375845 /* Build configuration list for PBXNativeTarget "Problem_Graph" */;
+			buildPhases = (
+				2143769A2241A78B00375845 /* Sources */,
+				2143769B2241A78B00375845 /* Frameworks */,
+				2143769C2241A78B00375845 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Problem_Graph;
+			productName = Problem_Graph;
+			productReference = 2143769E2241A78B00375845 /* Problem_Graph */;
 			productType = "com.apple.product-type.tool";
 		};
 		DA29A221222F311400F60FBE /* Swift-Labs */ = {
@@ -649,6 +695,9 @@
 					2143768E22403C7400375845 = {
 						CreatedOnToolsVersion = 10.1;
 					};
+					2143769D2241A78B00375845 = {
+						CreatedOnToolsVersion = 10.1;
+					};
 					DA29A221222F311400F60FBE = {
 						CreatedOnToolsVersion = 10.1;
 					};
@@ -705,6 +754,7 @@
 				DAA796DF223B0FFE0053518C /* MiniProject */,
 				21437683223C403D00375845 /* Friday Exercise 1 */,
 				2143768E22403C7400375845 /* Adjacency-Matrix */,
+				2143769D2241A78B00375845 /* Problem_Graph */,
 			);
 		};
 /* End PBXProject section */
@@ -723,6 +773,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				2143769222403C7500375845 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2143769A2241A78B00375845 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				214376A12241A78B00375845 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -845,6 +903,26 @@
 			name = Debug;
 		};
 		2143769522403C7500375845 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L7L53ZA324;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
+		214376A32241A78B00375845 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L7L53ZA324;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		214376A42241A78B00375845 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -1186,6 +1264,15 @@
 			buildConfigurations = (
 				2143769422403C7500375845 /* Debug */,
 				2143769522403C7500375845 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		214376A22241A78B00375845 /* Build configuration list for PBXNativeTarget "Problem_Graph" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				214376A32241A78B00375845 /* Debug */,
+				214376A42241A78B00375845 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
