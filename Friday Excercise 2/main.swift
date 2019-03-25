@@ -8,5 +8,12 @@
 
 import Foundation
 
-print("Hello, World!")
+let printTomatoes = Tomatoes()
+let printBridges = Bridges()
+
+// Print the tomatoes
+printTomatoes.getTomatoes()
+
+// Print the bridges
+printBridges.buildShortestBridge()
 

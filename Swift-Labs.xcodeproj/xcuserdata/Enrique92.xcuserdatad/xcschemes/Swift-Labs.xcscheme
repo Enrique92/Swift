@@ -7,9 +7,9 @@
             buildForRunning = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2143769D2241A78B00375845"
-               BuildableName = "Problem_Graph"
-               BlueprintName = "Problem_Graph"
+               BlueprintIdentifier = "218FC1822246F3230066C1DD"
+               BuildableName = "Friday Excercise 2"
+               BlueprintName = "Friday Excercise 2"
                ReferencedContainer = "container:Swift-Labs.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -22,9 +22,9 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2143769D2241A78B00375845"
-            BuildableName = "Problem_Graph"
-            BlueprintName = "Problem_Graph"
+            BlueprintIdentifier = "218FC1822246F3230066C1DD"
+            BuildableName = "Friday Excercise 2"
+            BlueprintName = "Friday Excercise 2"
             ReferencedContainer = "container:Swift-Labs.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
