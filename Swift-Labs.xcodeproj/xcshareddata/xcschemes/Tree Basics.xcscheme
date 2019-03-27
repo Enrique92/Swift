@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "214376C02245818D00375845"
-               BuildableName = "Trees"
-               BlueprintName = "Trees"
+               BlueprintIdentifier = "218FC19E224AD67F0066C1DD"
+               BuildableName = "Tree Basics"
+               BlueprintName = "Tree Basics"
                ReferencedContainer = "container:Swift-Labs.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -74,9 +74,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "214376C02245818D00375845"
-            BuildableName = "Trees"
-            BlueprintName = "Trees"
+            BlueprintIdentifier = "218FC19E224AD67F0066C1DD"
+            BuildableName = "Tree Basics"
+            BlueprintName = "Tree Basics"
             ReferencedContainer = "container:Swift-Labs.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
