@@ -33,7 +33,7 @@ class Diameter {
             if(nodeInfo.isEmpty) {
                 return 0;
             }
-            print(helper(nodeInfo as! [Int])
+            print(helper(nodeInfo as! [Int]))
         }
         return res;
     }

@@ -7,37 +7,37 @@
 		<key>Adjacency-Matrix.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>14</integer>
+			<integer>17</integer>
 		</dict>
 		<key>Backtracking Created Mar. 12Mar. 12 Backtracking Created Mar. 12Mar. 12 Backtracking Backtracking Backtracking Backtracking.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>11</integer>
+			<integer>12</integer>
 		</dict>
 		<key>Bridges.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>17</integer>
+			<integer>14</integer>
 		</dict>
 		<key>Collections.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>10</integer>
+			<integer>7</integer>
 		</dict>
 		<key>Control.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>3</integer>
+			<integer>4</integer>
 		</dict>
 		<key>Crawl.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>7</integer>
+			<integer>8</integer>
 		</dict>
 		<key>Enum.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>9</integer>
+			<integer>10</integer>
 		</dict>
 		<key>Friday Excercise 2.xcscheme_^#shared#^_</key>
 		<dict>
@@ -47,22 +47,27 @@
 		<key>Friday Exercise 1.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>12</integer>
+			<integer>13</integer>
 		</dict>
 		<key>Functions.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>5</integer>
+			<integer>6</integer>
 		</dict>
 		<key>Heap.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>19</integer>
 		</dict>
+		<key>Lowest Common Ancestor(LCA).xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>21</integer>
+		</dict>
 		<key>MiniProject.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>13</integer>
+			<integer>11</integer>
 		</dict>
 		<key>ProblemA.xcscheme_^#shared#^_</key>
 		<dict>
@@ -77,7 +82,7 @@
 		<key>Recursion.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>8</integer>
+			<integer>9</integer>
 		</dict>
 		<key>Swift-Labs.xcscheme</key>
 		<dict>
@@ -87,12 +92,12 @@
 		<key>Swift-Labs.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>4</integer>
+			<integer>3</integer>
 		</dict>
 		<key>SwiftOptionals.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>6</integer>
+			<integer>5</integer>
 		</dict>
 		<key>Topological Sort.xcscheme_^#shared#^_</key>
 		<dict>
@@ -115,12 +120,12 @@
 		<key>214376C02245818D00375845</key>
 		<dict>
 			<key>primary</key>
-			<true />
+			<true/>
 		</dict>
 		<key>218FC19E224AD67F0066C1DD</key>
 		<dict>
 			<key>primary</key>
-			<true />
+			<true/>
 		</dict>
 	</dict>
 </dict>
