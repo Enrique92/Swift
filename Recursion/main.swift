@@ -61,14 +61,14 @@ func reverseLines() {
 //reverseLines()
 
 // Exhaustive search
-//func printBinaryNew(_ digits: Int, _ prefix: String = "") {
-//    if digits == 0 {
-//        print(prefix)
-//    } else {
-//        printBinary(digits - 1, prefix + "0")
-//        printBinary(digits - 1, prefix + "1")
-//    }
-//}
+func printBinaryNew(_ digits: Int, _ prefix: String = "") {
+    if digits == 0 {
+        print(prefix)
+    } else {
+        printBinary(digits - 1, prefix + "0")
+        printBinary(digits - 1, prefix + "1")
+    }
+}
 
 func printDecimals(_ digits: Int, _ prefix: String = "") {
     if digits == 0 {

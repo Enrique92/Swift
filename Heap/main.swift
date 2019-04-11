@@ -10,107 +10,143 @@ import Foundation
 
 class PriorityQueue {
     
-    // Insert the value x in the Array
-    func insert(_ S: inout [Int], _ x: Int) {
-        S.append(x)
-    }
-    
-    // Return the largest number of the Array
-    func max(_ S: inout [Int]) -> Int {
-        var largest = 0
-        for i in S {
-            if (i >= largest) {
-                largest = i
-            }
+    // Implement PriorityQueue (heap implementation)
+    struct PriorityQueue<E> where E: Comparable {
+        private var elements: Heap<E>
+        
+        var isEmpty: Bool {
+            return elements.isEmpty
         }
-        return largest
-    }
-    
-    // Return the largest number of the Array and remove from it
-    func extractMax(_ S: inout [Int]) -> Int {
-        var largest = 0
-        for (key, value) in S.enumerated() {
-            if (value >= largest) {
-                largest = value
-                if (largest > value) {
-                    S.remove(at: key)
-                }
-            }
+        
+        var count: Int {
+            return elements.count
         }
-        return largest
-    }
-    
-    // Replace from the Array the value x for the value k
-    func increaseKey(_ S: inout [Int], _ x: Int, _ k: Int) {
-        for (key, value) in S.enumerated() {
-            if (value == x) {
-                S[key] = k
-            }
+        
+        init() {
+            elements = Heap<E>()
         }
-    }
-    
-    func printArray(_ S: inout [Int]) {
-        print(S)
+        
+        func peek() -> E? {
+            return elements.max()
+        }
+        
+        mutating func enqueue(_ elem: E) {
+            elements.insert(elem)
+        }
+        
+        mutating func dequeue() -> E? {
+            return elements.extractMax()
+        }
+        
+        mutating func increaseKey(at index: Int, with value: E) {
+            elements.replace(at: index, with: value)
+        }
+        
     }
 }
 
 class Heap {
     
-    // Produce a max-heap from an unordered array
-    func buildMaxHeap(_ array: inout [Int]) {
-        var largest = 0
-        for i in array {
-            if (i > largest) {
-                
+    struct Heap<E> : CustomStringConvertible where E: Comparable {
+        var description: String {
+            return nodes.description
+        }
+        
+        private var nodes = [E]()
+        
+        var isEmpty: Bool {
+            return nodes.isEmpty
+        }
+        
+        var count: Int {
+            return nodes.count
+        }
+        
+        init() {
+        }
+        
+        @inline(__always) func parent(of i: Int) -> Int {
+            return Int((i - 1) / 2)
+        }
+        
+        @inline(__always) func left(of i: Int) -> Int {
+            return i * 2 + 1
+        }
+        
+        @inline(__always) func right(of i: Int) -> Int {
+            return i * 2 + 2
+        }
+        
+        public func max() -> E? {
+            return nodes.first
+        }
+        
+        mutating func insert(_ value: E) {
+            nodes.append(value)
+            bubbleUp(nodes.count - 1)
+        }
+        
+        mutating func bubbleUp(_ index: Int) {
+            var index = index
+            let current = nodes[index]
+            var parentIndex = self.parent(of: index)
+            while index > 0 && nodes[index] > nodes[parentIndex] {
+                nodes[index] = nodes[parentIndex]
+                index = parentIndex
+                parentIndex = self.parent(of: index)
+            }
+            nodes[index] = current
+        }
+        
+        mutating func maxHeapify(_ index: Int) {
+            let l = self.left(of: index)
+            let r = self.right(of: index)
+            var largest = index
+            if l < self.count && nodes[l] > nodes[index] {
+                largest = l
+            }
+            if r < self.count && nodes[r] > nodes[largest] {
+                largest = r
+            }
+            if largest != index {
+                nodes.swapAt(index, largest)
+                maxHeapify(largest)
             }
         }
-    }
-    
-    // Return the size of the Heap
-    func heapSize(_ array: inout [Int]) -> Int {
-        return array.count
-    }
-    
-    // Correct a single violation of the heap property in a subtree at its root
-    func maxHeapify(_ array: inout [Int], _ largest: inout Int) {
-        let i = 1
-        let parent = i / 2
-        let left = i * 2
-        let right = (i * 2) + 1
         
-        if (left <= heapSize(&array) && array[left] > array[i]) {
-            largest = left
-        } else {
-            largest = i
+        mutating func extractMax() -> E? {
+            let max = nodes.first
+            nodes.swapAt(0, nodes.count - 1)
+            nodes.remove(at: nodes.count - 1)
+            maxHeapify(0)
+            return max
         }
         
-        if (right <= heapSize(&array) && array[right] > array[largest]) {
-            largest = right
-        }
-        
-        if (largest != i) {
-            array[i] = array[largest]
-            maxHeapify(&array, &largest)
+        mutating func replace(at index: Int, with value: E) {
+            guard index < nodes.count, nodes[index] < value else { return }
+            nodes.remove(at: index)
+            insert(value)
         }
     }
     
-    func insert(_ heap: inout Array<Comparable>, _ value: Int) {
-        heap.append(value)
-    }
-    
-    func extractMax() {
+    extension Heap {
+        mutating func buildMaxHeap(_ arr: [E]) {
+            self.nodes = arr
+            for i in stride(from: nodes.count / 2 - 1, through: 0, by: -1) {
+                print(i)
+                maxHeapify(i)
+            }
+        }
         
-    }
-    
-    func heapSort() {
-        
+        mutating func heapSort(_ arr: [E]) -> [E] {
+            var result = [E]()
+            buildMaxHeap(arr)
+            while !nodes.isEmpty {
+                nodes.swapAt(count - 1, 0)
+                result.append(nodes.remove(at: count - 1))
+                maxHeapify(0)
+            }
+            return result
+        }
     }
 }
-
-var heap = PriorityQueue()
-
-var array = [16, 14, 10, 8, 19, 9, 3, 2, 4, 1]
-
-heap.insert(&array, 3)
-heap.printArray(&array)
-print(heap.max(&array))

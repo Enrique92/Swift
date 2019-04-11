@@ -8,8 +8,31 @@
 
 import Foundation
 
-func storeGraph() {
+func AdjacencyMatrix() {
+    let firstLine = readLine()!.split(separator: " ")
+    let n = Int(firstLine[0])! // num of vertices
+    let m = Int(firstLine[1])! // num of edges
+    var matrix = Array<Array<Int>>(repeating: Array<Int>(repeating: 0, count: n + 1), count: n + 1)
     
+    for _ in 0..<n {
+        matrix.append(Array<Int>(repeating: 0, count: n))
+    }
+    
+    // getting edges
+    for _ in 0..<m {
+        let edge = readLine()!.split(separator: " ")
+        let u = Int(edge[0])! - 1
+        let v = Int(edge[1])! - 1
+        matrix[u][v] = 1
+        matrix[v][u] = 1
+    }
+    
+    for row in matrix {
+        print(row)
+    }
+}
+
+func storeGraph() {
     let input = readLine()!.split(separator: " ")
     let n = Int(input[0])!
     let m = Int(input[1])!

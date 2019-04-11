@@ -8,38 +8,49 @@
 
 import Foundation
 
-func preOrderTree() {
-    let sizeTree = Int(readLine()!)!
-    
-    var tree = [[String]]()
-    var leftNode = ""
-    var rightNode = ""
-    var fatherNode = ""
-    
-    for _ in 0..<sizeTree {
-        let inputTree = readLine()!.map {($0.description)}
-        tree.append(inputTree)
+var tree = [[Int]](repeating: [Int](repeating: 0, count: 2), count: 50)
+
+func preorder(node: Int) {
+    if node == -1 {
+        return
     }
-    
-    for y in 0..<tree.count {
-        for x in 0..<tree.count {
-            if (leftNode[x] == "A") {
-                leftNode = tree[x].description
-                rightNode = tree[y].description
-            }
-            print(tree[x][y])
-        }
+    print(Character(UnicodeScalar(node + 65)!), terminator: "")
+    preorder(node: tree[node][0])
+    preorder(node: tree[node][1])
+}
+
+func inorder(node: Int) {
+    if node == -1 {
+        return
     }
+    inorder(node: tree[node][0])
+    print(Character(UnicodeScalar(node + 65)!), terminator: "")
+    inorder(node: tree[node][1])
 }
 
-func inOrderTree() {
-    
+func postorder(node: Int) {
+    if node == -1 {
+        return
+    }
+    postorder(node: tree[node][0])
+    postorder(node: tree[node][1])
+    print(Character(UnicodeScalar(node + 65)!), terminator: "")
 }
 
-func postOrderTree() {
-    
+func treeTraversal() {
+    let n = Int(readLine()!)!
+    for _ in 0..<n {
+        let nodeInfo = readLine()!.split(separator: " ").map{ String($0) }
+        let x = Character(nodeInfo[0]).ascii - 65
+        let l = Character(nodeInfo[1]).ascii
+        let r = Character(nodeInfo[2]).ascii
+        tree[x][0] = l == 46 ? -1 : l - 65
+        tree[x][1] = r == 46 ? -1 : r - 65
+    }
+    preorder(node: 0)
+    print()
+    inorder(node: 0)
+    print()
+    postorder(node: 0)
+    print()
 }
-
-// Print the first tree
-preOrderTree()
-

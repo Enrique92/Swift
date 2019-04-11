@@ -9,41 +9,40 @@
 import Foundation
 
 class Parent {
-    // Create the tree
-    var tree = [[Int]](repeating: [Int](repeating: 0, count: 2), count: 50)
-    
-    func whoIsMyParent() {
-        let size = Int(readLine()!)!
-        var parent = 0
-        if (size < 1) {
-            return
-        } else {
-            for i in 0..<size-1 {
-                let nodeInfo = readLine()!.split(separator: " ").map {
-                    Int($0)
+    func WhosMyParent() {
+        let n = Int(readLine()!)! // num of vertices
+        var adjList = [[Int]](repeating: [], count: n + 1)
+        var depth = [Int](repeating: 0, count: n + 1)
+        var check = [Bool](repeating: false, count: n + 1)
+        var parent = [Int](repeating: 0, count: n + 1)
+        
+        for _ in 0..<n-1 {
+            let edge = readLine()!.split(separator: " ")
+            let u = Int(edge[0])!
+            let v = Int(edge[1])!
+            adjList[u].append(v) // undirected u -> v, v -> u
+            adjList[v].append(u)
+        }
+        
+        depth[1] = 0
+        check[1] = true
+        var q = Queue<Int>()
+        q.enqueue(1)
+        parent[1] = 0
+        while !q.isEmpty {
+            let x = q.dequeue()!
+            for v in adjList[x] {
+                if (!check[v]) {
+                    depth[v] = depth[x] + 1
+                    check[v] = true
+                    parent[v] = x
+                    q.enqueue(v)
                 }
-                let l = nodeInfo[0]!
-                let r = nodeInfo[1]!
-                if (i < size) {
-                    if (l < r) {
-                        //preorder(node: 0)
-                        parent = l
-                    } else if(l > r) {
-                        //preorder(node: 0)
-                        parent = r + 1
-                    }
-                }
-                // Print the parent of each node
-                print(parent)
             }
         }
+        
+        for i in 2...n {
+            print(parent[i])
+        }
     }
-    
-//    func preorder(node: Int) {
-//        if node == -1 {
-//            return
-//        }
-//        preorder(node: tree[node][0])
-//        preorder(node: tree[node][1])
-//    }
 }

@@ -176,7 +176,7 @@ enum Subject {
 struct Student {
     var grades = [97.0, 99.0, 98.0]
     let name = Name(firstName:"Grace", lastName:"Hopper")
-    var favoriteSubject = Subject.Science
+    var favoriteSubject = Subject.science
 
     var gradePointAverage: Double {
         get {

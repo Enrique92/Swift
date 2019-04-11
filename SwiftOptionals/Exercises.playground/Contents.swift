@@ -33,13 +33,13 @@ var numericalString = "3"
 var number = Int(numericalString)
 //TODO: Unwrap number to make the following print statement more readable.
 let numberUnwrapped = number
-print("\(number) is the magic number.")
+print("\(String(describing: number)) is the magic number.")
 //: 3b) Change the value of numericalString to "three" and execute the playground again.
 var numericalString1 = "three"
 var number1 = Int(numericalString)
 //TODO: Unwrap number to make the following print statement more readable.
-let numberUnwrapped1 = number1
-print("\(number1) is the magic number.")
+let numberUnwrapped1 = (number1)!
+print("\(String(describing: number1)) is the magic number.")
 //: ### Exercise 4
 //: The class UIViewController has a property called tabBarController.  The tabBarController property is an optional of type UITabBarController?. The tabBarController itself holds a tabBar as a property. Complete the code below by filling in the appropriate use of optional chaining to access the tab bar property.
 var viewController = UIViewController()

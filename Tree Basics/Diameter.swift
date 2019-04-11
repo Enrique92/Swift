@@ -9,62 +9,59 @@
 import Foundation
 
 class Diameter {
-    
-    var res = 0
-    var l = 0, r = 0
-    var tree: [[Int]] = [[Int]]()
-    
-    func helper(_ node: [Int]) -> Int {
-        let l = 1 + helper([node[0]]);
-        let r = 1 + helper([node[1]]);
-        if(node.isEmpty){
-            return -1;
-        }
-        res = max(res, l + r)
-        return max(l, r)
+    struct Edge {
+        let to: Int
+        let cost: Int
     }
     
-    func diameterOfBinaryTree() -> Int {
-        let size = Int(readLine()!)!
-        for _ in 0..<size-1 {
-            let nodeInfo = readLine()!.split(separator: " ").map {
-                Int($0)
+    func bfsDiameter(start: Int, check: inout [Bool], dist: inout [Int], adjList: inout [[Edge]]) {
+        var q = Queue<Int>()
+        check[start] = true
+        q.enqueue(start)
+        while !q.isEmpty {
+            let x = q.dequeue()!
+            for i in 0..<adjList[x].count {
+                let edge = adjList[x][i]
+                if check[edge.to] == false {
+                    dist[edge.to] = dist[x] + edge.cost
+                    q.enqueue(edge.to)
+                    check[edge.to] = true
+                }
             }
-            if(nodeInfo.isEmpty) {
-                return 0;
-            }
-            print(helper(nodeInfo as! [Int]))
         }
-        return res;
+    }
+    
+    func Diameter() {
+        let n = Int(readLine()!)!
+        var adjList = [[Edge]](repeating: [], count: n + 1)
+        var check = [Bool](repeating: false, count: n + 1)
+        var distance = [Int](repeating: 0, count: n + 1)
+        
+        for _ in 1...n {
+            let line = readLine()!.split(separator: " ").map { Int($0)! }
+            let node = line[0]
+            var j = 1
+            while j < line.count-2 {
+                let next = line[j]
+                let dist = line[j+1]
+                adjList[node].append(Edge(to: next, cost: dist))
+                if line[j + 2] == -1 {
+                    break
+                }
+                j += 2
+            }
+        }
+        
+        bfsDiameter(start: 1, check: &check, dist: &distance, adjList: &adjList)
+        var start = 1
+        for i in 2...n {
+            if distance[i] > distance[start] {
+                start = i
+            }
+        }
+        var check2 = [Bool](repeating: false, count: n + 1)
+        var distance2 = [Int](repeating: 0, count: n + 1)
+        bfsDiameter(start: start, check: &check2, dist: &distance2, adjList: &adjList)
+        print(distance2.max()!)
     }
 }
-
-//    var tree = [[Int]](repeating: [Int](repeating: 0, count: 2), count: 50)
-//
-//    var diameter = 0
-//    func diameterOfNode() -> Int {
-//        let size = Int(readLine()!)!
-//        var lv = 0, rv = 0
-//
-//        for _ in 0..<size-1 {
-//            let nodeInfo = readLine()!.split(separator: " ").map {
-//                Int($0)
-//            }
-//            let left = nodeInfo[0]!
-//            let right = nodeInfo[1]!
-//            if left != 0 {
-//                lv = 1 + diameterOfNode()
-//            }
-//            if right != 0 {
-//                rv = 1 + diameterOfNode()
-//            }
-//        }
-//
-//        diameter = max(diameter, lv + rv)
-//        return max(lv, rv)
-//    }
-//
-//    func diameterOfBinaryTree() -> Int {
-//        diameterOfNode()
-//        return diameter
-//    }
